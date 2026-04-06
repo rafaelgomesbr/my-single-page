@@ -25,7 +25,7 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
           {experience.map((item, i) => (
             <li key={`${item.period}-${item.title}`} className="relative">
               <span
-                className={`absolute -left-[33px] top-0.5 flex h-4 w-4 items-center justify-center rounded-full border-2 ${
+                className={`absolute -left-[41px] top-0.5 flex h-4 w-4 items-center justify-center rounded-full border-2 ${
                   i === 0
                     ? 'border-sky-500 bg-sky-500 dark:border-sky-400 dark:bg-sky-400'
                     : 'border-slate-300 bg-white dark:border-slate-600 dark:bg-slate-900'
