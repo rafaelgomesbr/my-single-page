@@ -1,15 +1,21 @@
 import type { HeroContent, NavItem } from '../../types/portfolio'
+import type { Lang } from '../../i18n'
+import { useI18n } from '../../i18n'
 import { Container } from '../layout/Container'
 import { ThemeToggle } from '../ui/ThemeToggle'
+import { LangToggle } from '../ui/LangToggle'
 
 type HeroSectionProps = {
   hero: HeroContent
   nav: NavItem[]
   isDark: boolean
   onToggleTheme: () => void
+  lang: Lang
+  onToggleLang: () => void
 }
 
-export function HeroSection({ hero, nav, isDark, onToggleTheme }: HeroSectionProps) {
+export function HeroSection({ hero, nav, isDark, onToggleTheme, lang, onToggleLang }: HeroSectionProps) {
+  const t = useI18n()
   return (
     <section className="relative overflow-hidden border-b border-slate-200/60 pb-16 pt-6 sm:pb-24 sm:pt-8 dark:border-slate-800/60">
       <span className="hero-orb hero-orb--left" aria-hidden="true" />
@@ -24,7 +30,7 @@ export function HeroSection({ hero, nav, isDark, onToggleTheme }: HeroSectionPro
           >
             rafael<span className="text-sky-500">.</span>sg
           </a>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <nav aria-label="Navegação principal" className="hidden md:block">
               <ul className="flex items-center gap-6 text-[13px] font-medium text-slate-500 dark:text-slate-400">
                 {nav.map((item) => (
@@ -39,18 +45,20 @@ export function HeroSection({ hero, nav, isDark, onToggleTheme }: HeroSectionPro
                 ))}
               </ul>
             </nav>
+            <LangToggle lang={lang} onToggle={onToggleLang} />
             <ThemeToggle isDark={isDark} onToggle={onToggleTheme} />
           </div>
         </div>
 
         {/* ----- Hero content ----- */}
-        <div className="max-w-3xl">
+        <div className="flex flex-col-reverse items-start gap-10 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-3xl">
           <span className="reveal-up reveal-delay-1 mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
-            Disponível para oportunidades
+            {t.heroStatus}
           </span>
 
           <h1 className="reveal-up reveal-delay-1 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-[3.5rem] lg:leading-[1.1] dark:text-slate-50">
@@ -81,6 +89,19 @@ export function HeroSection({ hero, nav, isDark, onToggleTheme }: HeroSectionPro
             >
               {hero.ctaSecondary.label}
             </a>
+          </div>
+          </div>
+
+          {/* ----- Profile photo ----- */}
+          <div className="reveal-up reveal-delay-2 shrink-0">
+            <div className="relative">
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-sky-400 to-indigo-500 opacity-20 blur-md" />
+              <img
+                src="/Eu.png"
+                alt="Rafael Souza Gomes"
+                className="relative h-32 w-32 rounded-full border-2 border-white/80 object-cover shadow-xl sm:h-40 sm:w-40 lg:h-48 lg:w-48 dark:border-slate-800"
+              />
+            </div>
           </div>
         </div>
       </Container>

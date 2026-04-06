@@ -1,4 +1,5 @@
 import type { ExperienceItem } from '../../types/portfolio'
+import { useI18n } from '../../i18n'
 import { Container } from '../layout/Container'
 import { SectionHeading } from '../layout/SectionHeading'
 
@@ -7,6 +8,7 @@ type ExperienceSectionProps = {
 }
 
 export function ExperienceSection({ experience }: ExperienceSectionProps) {
+  const t = useI18n()
   return (
     <section
       id="experience"
@@ -14,9 +16,9 @@ export function ExperienceSection({ experience }: ExperienceSectionProps) {
     >
       <Container>
         <SectionHeading
-          overline="Trajetória"
-          title="Onde já atuei"
-          description="Experiência profissional com foco em produtos digitais, front-end de escala e melhoria contínua."
+          overline={t.experienceOverline}
+          title={t.experienceTitle}
+          description={t.experienceDescription}
         />
 
         <ol className="relative space-y-10 border-l-2 border-slate-200 pl-8 dark:border-slate-800">

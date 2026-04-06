@@ -1,4 +1,5 @@
 import type { ContactContent } from '../../types/portfolio'
+import { useI18n } from '../../i18n'
 import { Container } from '../layout/Container'
 import { SectionHeading } from '../layout/SectionHeading'
 
@@ -7,12 +8,13 @@ type ContactSectionProps = {
 }
 
 export function ContactSection({ contact }: ContactSectionProps) {
+  const t = useI18n()
   return (
     <section id="contact" className="border-b border-slate-200/60 py-16 sm:py-24 dark:border-slate-800/60">
       <Container>
         <SectionHeading
-          overline="Contato"
-          title="Bora trocar uma ideia?"
+          overline={t.contactOverline}
+          title={t.contactTitle}
           description={contact.finalCta}
         />
 

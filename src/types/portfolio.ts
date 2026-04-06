@@ -39,7 +39,7 @@ export type ProjectItem = {
   name: string
   description: string
   stack: string[]
-  image: string
+  images: string[]
   demoUrl: string
   repoUrl: string
 }

@@ -89,11 +89,20 @@ export const portfolioData: PortfolioData = {
   ],
   projects: [
     {
+      name: 'Gamora — Flashcards com IA',
+      description:
+        'App próprio de flashcards inteligentes com geração de conteúdo via Gemini, pagamento por Stripe e suporte cross-platform via Capacitor. Projeto pessoal em desenvolvimento ativo.',
+      stack: ['Angular', 'Firebase', 'Gemini AI', 'Stripe', 'Capacitor', 'Sass'],
+      images: ['/gamora-1.png', '/gamora-2.png', '/gamora-3.png'],
+      demoUrl: 'https://gamora.app',
+      repoUrl: 'https://github.com/rafaelgomesbr/rafa-flash-cards',
+    },
+    {
       name: 'Cielo — Canais Digitais',
       description:
         'Arquitetura e evolução de interfaces de alto tráfego nos canais digitais da maior adquirente da América Latina. Foco em performance, padrões técnicos e sustentabilidade de código em múltiplos produtos simultâneos.',
       stack: ['React', 'AngularJS', 'Angular 12', 'Jenkins', 'K8s'],
-      image: '/hero.png',
+      images: [],
       demoUrl: 'https://www.linkedin.com/in/rafaelgomesbr/',
       repoUrl: 'https://github.com/rafaelgomesbr',
     },
@@ -102,7 +111,7 @@ export const portfolioData: PortfolioData = {
       description:
         'Desenvolvimento de interfaces modernas para a plataforma de pagamentos do Banco Safra, com componentização robusta e entrega contínua em ciclos de sprint curtos.',
       stack: ['Angular 2+', 'AngularJS', 'Node.js', 'Gulp', 'Less'],
-      image: '/hero.png',
+      images: [],
       demoUrl: 'https://www.linkedin.com/in/rafaelgomesbr/',
       repoUrl: 'https://github.com/rafaelgomesbr',
     },
@@ -111,7 +120,7 @@ export const portfolioData: PortfolioData = {
       description:
         'Manutenção e evolução do framework de componentes web reutilizáveis utilizado em toda a suíte de produtos Sankhya, aumentando consistência visual e produtividade do time.',
       stack: ['JavaScript', 'AngularJS', 'Java', 'Git'],
-      image: '/hero.png',
+      images: [],
       demoUrl: 'https://www.linkedin.com/in/rafaelgomesbr/',
       repoUrl: 'https://github.com/rafaelgomesbr',
     },

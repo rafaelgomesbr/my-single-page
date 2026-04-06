@@ -1,4 +1,5 @@
 import type { SkillCategory } from '../../types/portfolio'
+import { useI18n } from '../../i18n'
 import { Container } from '../layout/Container'
 import { SectionHeading } from '../layout/SectionHeading'
 
@@ -7,6 +8,7 @@ type SkillsSectionProps = {
 }
 
 export function SkillsSection({ skills }: SkillsSectionProps) {
+  const t = useI18n()
   const icons = [
     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>,
     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.049.58.025 1.194-.14 1.743" /></svg>,
@@ -22,9 +24,9 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
     <section id="skills" className="border-b border-slate-200/60 py-16 sm:py-24 dark:border-slate-800/60">
       <Container>
         <SectionHeading
-          overline="Skills"
-          title="Stack técnica"
-          description="Combinação de tecnologias front-end modernas, ferramentas de infraestrutura e práticas de engenharia que garantem entregas rápidas e sustentáveis."
+          overline={t.skillsOverline}
+          title={t.skillsTitle}
+          description={t.skillsDescription}
         />
 
         <div className="grid gap-5 md:grid-cols-3">
