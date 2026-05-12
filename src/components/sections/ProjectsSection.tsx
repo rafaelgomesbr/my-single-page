@@ -157,7 +157,6 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                 <div className="mt-5 flex gap-2.5 text-xs">
                   {(() => {
                     const isLiveApp = project.demoUrl && !project.demoUrl.includes('linkedin')
-                    const isPublicRepo = project.repoUrl && !project.repoUrl.endsWith('rafaelgomesbr')
                     return (
                       <>
                         <a
@@ -169,17 +168,6 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                           {isLiveApp ? t.projectViewApp : t.projectLinkedIn}
                           <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
                         </a>
-                        {isPublicRepo && (
-                          <a
-                            href={project.repoUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 px-4 py-2 font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-500"
-                          >
-                            {t.projectCode}
-                            <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
-                          </a>
-                        )}
                       </>
                     )
                   })()}
